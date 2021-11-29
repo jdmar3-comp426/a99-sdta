@@ -13,7 +13,6 @@ const LoginForm = ({user, setUser, setNotif}) => {
         )
     }
 
-    // TODO: FINISH LOGIN FORM
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -37,7 +36,7 @@ const LoginForm = ({user, setUser, setNotif}) => {
             }, 5000);
             setUsername('');
             setPassword('');
-            navigate('/')
+            navigate('/dashboard')
         } catch (error) {
             setNotif('error: Invalid credentials');
             setTimeout(() => {
