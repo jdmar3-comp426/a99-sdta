@@ -32,7 +32,7 @@ const App = () => {
           <Route path='/login' element={<LoginForm setNotif={setNotif} user={user} setUser={setUser} />} />
           <Route path="/dashboard" element={<DashBoard user={user} />} />
         </Routes>
-        <LogoutButton user={user} setUser={setUser} />
+        <LogoutButton user={user} setUser={setUser} setNotif={setNotif} />
       </Router>
     </div>
   )
