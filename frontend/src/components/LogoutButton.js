@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 const LogoutButton = ({setUser, user, setNotif}) => {
+    const navigate = useNavigate();
 
     const handleLogout = async () => {
         try {
@@ -14,6 +16,7 @@ const LogoutButton = ({setUser, user, setNotif}) => {
             console.log(newUser.data);
             setUser(null);
             setNotif('Successfully logged out');
+            navigate('/');
         } catch (error) {
             setNotif('error when logging out');
             setTimeout(() => {
