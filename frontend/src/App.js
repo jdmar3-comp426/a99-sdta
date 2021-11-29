@@ -15,7 +15,7 @@ const App = () => {
     const loggedUser = window.localStorage.getItem('loggedUser');
     if (loggedUser) {
       const existingUser = JSON.parse(loggedUser);
-      setUser(existingUser.data);
+      setUser(existingUser);
     }
   }, [])
 

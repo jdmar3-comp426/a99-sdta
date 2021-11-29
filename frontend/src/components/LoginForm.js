@@ -29,7 +29,7 @@ const LoginForm = ({user, setUser, setNotif}) => {
             }
             const newUser = await axios.post('http://localhost:3001/app/interaction', logInteraction);
             setUser(newUser.data);
-            window.localStorage.setItem('loggedUser', JSON.stringify(newUser));
+            window.localStorage.setItem('loggedUser', JSON.stringify(newUser.data));
             setNotif(`${username} successfully logged in!`);
             setTimeout(() => {
                 setNotif(null);
