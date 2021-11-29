@@ -9,6 +9,8 @@ app.get('/', (request, response) => {
     response.send('Ping');
 })
 
+// TODO: Allow users to update their username or password
+
 // Add an interaction to specified user (login or logout)
 app.post('/app/interaction', async (request, response) => {
     try {
