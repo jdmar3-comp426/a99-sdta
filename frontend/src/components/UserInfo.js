@@ -11,7 +11,7 @@ const UserInfo = ({user, setUser, setNotif}) => {
 
     const handleUserUpdate = async (e) => {
         try {
-            // e.preventDefault();
+            e.preventDefault();
             const newUserInfo = {
                 username: newUsername,
                 password: newPassword
