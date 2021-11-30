@@ -91,6 +91,24 @@ app.get('/app/users/:id', async (request, response) => {
     }
 })
 
+app.put('/app/users/:id', async (request, response) => {
+    try {
+        const body = request.body;
+        const oldUser = await User.findById(request.params.id);
+        oldUser.username = body.username;
+        oldUser.password = body.password;
+        const updateInteraction = {
+            interactionType: "Updated account info",
+            interactionDate: new Date()
+        }
+        oldUser.interactions = oldUser.interactions.concat(updateInteraction);
+        const newUser = await oldUser.save();
+        response.json(newUser);
+    } catch (error) {
+        response.status(500).json(error);
+    }
+})
+
 // Delete user by ID
 app.delete('/app/users/:id', (request, response) => {
     User.findByIdAndRemove(request.params.id).then(result => {
