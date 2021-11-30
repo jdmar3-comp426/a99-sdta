@@ -22,7 +22,6 @@ const LoginForm = ({user, setUser, setNotif}) => {
                 password
             }
             const loggedUser = await axios.post('http://localhost:3001/app/login', attemptedUser);
-            console.log(loggedUser)
             const logInteraction = {
                 interactionType: 'Login',
                 userId: loggedUser.data.id

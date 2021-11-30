@@ -6,6 +6,7 @@ import Notification from './components/Notification'
 import LoginForm from './components/LoginForm'
 import LogoutButton from './components/LogoutButton'
 import DashBoard from './components/Dashboard'
+import UserInfo from './components/UserInfo'
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -30,9 +31,13 @@ const App = () => {
         <Routes>
           <Route path='/register' element={<RegisterForm setNotif={setNotif} />} />
           <Route path='/login' element={<LoginForm setNotif={setNotif} user={user} setUser={setUser} />} />
+          <Route path='/userinfo' element={<UserInfo user={user}/>} />
           <Route path="/dashboard" element={<DashBoard user={user} />} />
         </Routes>
         <LogoutButton user={user} setUser={setUser} setNotif={setNotif} />
+        {user &&
+          <Link to='/userinfo' className="box">My User Info</Link>
+        }
       </Router>
     </div>
   )
