@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <h1 className="title">426 Project</h1>
+        <h1 className="title">CryptoCurrency Dashboard</h1>
         <Notification message={notif} />
         <Header user={user} />
         <Routes>
