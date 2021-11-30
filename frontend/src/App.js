@@ -31,7 +31,7 @@ const App = () => {
         <Routes>
           <Route path='/register' element={<RegisterForm setNotif={setNotif} />} />
           <Route path='/login' element={<LoginForm setNotif={setNotif} user={user} setUser={setUser} />} />
-          <Route path='/userinfo' element={<UserInfo user={user}/>} />
+          <Route path='/userinfo' element={<UserInfo user={user} setUser={setUser} setNotif={setNotif} />} />
           <Route path="/dashboard" element={<DashBoard user={user} />} />
         </Routes>
         <LogoutButton user={user} setUser={setUser} setNotif={setNotif} />
