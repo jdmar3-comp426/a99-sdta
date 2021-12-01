@@ -30,10 +30,13 @@ const LogoutButton = ({setUser, user, setNotif}) => {
     }
 
     return (
-        <div className="box">
-            <p>{user.username} currently logged in</p>
-            <button onClick={handleLogout}>Logout</button>
-        </div>
+        <div class="columns is-centered">
+                    <div class="column has-text-centered is-4">
+                    <h1 class="title">{user.username} currently logged in</h1>
+            <button class="button is-black is-outlined is-rounded" onClick={handleLogout}>Logout</button>
+                    </div>
+                </div>
+
     )
 }
 
