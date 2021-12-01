@@ -18,14 +18,16 @@ ________________________________________________________________________________
  | | ' \  _| '_/ _ \/ _` | || / _|  _| / _ \ ' \ 
  |_|_||_\__|_| \___/\__,_|\_,_\__|\__|_\___/_||_|
                                                  
-This documentation includes relevant maintenance information about the graphical user 
-interface, authentication, assets, and other user-facing details of our application.
-The application uses React as the front end framework and React Router for authentication
-layer login and registering. We use the Bulma CSS framework
+This documentation includes relevant maintenance information about the backend
+of our application. The application uses a simple backend for the dashboard.
+The application uses Mongoose to store user authentication information and
+CryptonGecko API to fetch the cryptocurrency information that we show on the
+dashboard. We use Node.js and Express for the web servers.
 
-The application consists of a simple sign-in page that authenticates a user. Once
-signed into a session, the user can view a dashboard of the top 30 cryptocurrencies,
-listing their logos and prices, aligned vertically.
+For more information on the CryptoGecko API, please see their documentation:
+https://www.coingecko.com/en/api/documentation
+
+P.S. BREAKING NEWS: fun fact!
 
 _____________________________________________________________________________________
      _ _                             
@@ -33,39 +35,53 @@ ________________________________________________________________________________
  / _` | / _` / _` | '_/ _` | '  \(_-<
  \__,_|_\__,_\__, |_| \__,_|_|_|_/__/
              |___/                   
-  
- /*
-+-----------------------+
-|    public             |                                                         +-----------------------+
-+-----------------------+---------------------------------------+                 |     src               |
-|                                                               |                 +-----------------------+---------------------------------------+
-|                                                               |                 |                                                               |
-|                                                               |                 |                                                               |
-|       --------|                            --------|          |                 |                                                               |
-|      /|-------|                           /|       |          |                 |       --------|                            --------|          |
-|     |_|       |                          |_|       |          |                 |      /|       |                           /|       |          |
-|     | |       |                          |         |          |                 |     |_|       |                          |_|       |          |
-|     | |       |                       1  |         |          |  <<React DOM>> 1|     |         |                          |         |          |
-|     | index.  |------------------------->| styles. |          +-----------------+     |         |                       1  |         |          |
-|     | html    | 1       <<links>>        | css     |          |1                |     | App.js  |------------------------->| index.js|          |
-|     | |       |                          |         |          |                 |     |         | 1       <<DOM  >>        |         |          |
-|     | |       |                          |         |          |                 |     |         |                          |         |          |
-|     | |       |                          |         |          |                 |     |         |                          |         |          |
-|     |---------|                          |---------|          |                 |     |         |                          |         |          |
-|         1 |                                                   |                 |     |---------|                          |---------|          |
-|           |<<links>>                                          |                 |                                                               |
-|           |                                                   |                 +---------------------------------------------------------------+
-|           +------>+---------------+                           |
-|                   |               |                           |
-|              1...*|               |                           |
-|                   |   Image       |                           |
-|                   |               |                           |
-|                   |               |                           |
-|                   +---------------+                           |
-|                                                               |
-+---------------------------------------------------------------+
+  /*
+            +------------------------------------------------------------------------------+
+            |                                                                              |
+            |                                                                              |
+            |               ____                            __                             |
+            |              /\  _`\                         /\ \__                          |
+            |              \ \ \L\ \     __     __      ___\ \ ,_\                         |
+            |               \ \ ,  /   /'__`\ /'__`\   /'___\ \ \/                         |
+            |                \ \ \\ \ /\  __//\ \L\.\_/\ \__/\ \ \_                        |
+            |                 \ \_\ \_\ \____\ \__/.\_\ \____\\ \__\                       |
+            |                  \/_/\/ /\/____/\/__/\/_/\/____/ \/__/                       |
+            |                                                                              |
+            |                                                                              |
+            +---------+------------------------------+-----------------------------+-------+
+                      |                              |                             |
+                      |   <<data>>                   |    <<data>>                 |   <<data>>
+                      |                              |                             |
+                      |                              |                             |
+                    \ 0 /                          \ 0 /                         \ 0 /
++-----------------+  \ /                            \ /                           \ /
+| BACK-END        |   |                              |                             |
+|                 |   |                              |                             |
+|      COMPONENT  |   |                              |                             |
++-----------------+-+-+-+--------------------------+-+-+--------------------------++-+------+
+|                   | | |                          | | |                          || |      |
+|                   | | |                          | | |                          || |      |
+|                   +-+-+                          +-+-+                          ++-+      |
+|                     |                              |                             |        |
+|        +---------+  |             +---------+      |        +---------+          |        |
+|        +---------+--+----------+  +---------+------+------+ +---------+----------+--+     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |  Node.Js Library      |  |   Mongoos Library     | |   CryptoGecko API     |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        +-----------------------+  +-----------------------+ +-----------------------+     |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
++-------------------------------------------------------------------------------------------+
  */
-
+ 
 _____________________________________________________________________________________
 
   _         _ _     _          _                                     
@@ -75,43 +91,18 @@ ________________________________________________________________________________
                                                                 |__/ 
 Below is a brief summary of what each file in frontend does:
 
-*/public/ 
+*/model/ 
 -TYPE: Directory
--DESCRIPTION: React files directory
--CONTENTS: ontains html, css, assets, .json manifest, and robots.txt.
+-DESCRIPTION: Directory holding agent models
+-CONTENTS: contains Javascript files.
 
-  *custom_style.css
-  -TYPE: Cascading Style Sheet
-  -DESCRIPTION:This css file is here to add functionality and style elements that
-  were needed for aesthetics of user interface. Do not edit this file or use it in any way.
-  -CLASSES: image has a pseudo class that drops shadow when hovering. The entire html
-  tag has a class where background color is assigned. The img class has an animation.
-  
-  *index.html
-  -TYPE: Hypertext Markup Language
-  -DESCRIPTION: This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-      
-  *manifest.json
-  -TYPE: JSON
-  -DESCRIPTION: provides metadata used when web app is installed on a
-      user's mobile device or desktop. See:
-      https://developers.google.com/web/fundamentals/web-app-manifest/
-   
-  *robots.txt
-  -TYPE: Text
-  -DESCRIPTION: Purported to prevent robots from scraping our site.
-  Togglable instructions for scrapers, doesn't provide protection
-  against scraping (only indicates developer's preference to 
-  other developers)
-  
-  *favicons.ico, .png files
-  -TYPE: Pictures
-  -DESCRIPTION: React logos
+  *user.js
+  -TYPE: JavaScript Model
+  -DESCRIPTION:This file represents the framework of a user. This file is linked
+  to Mongoose. It uses Mongoose to represent users via a Schema that is then
+  populated by user-inputted data in the front-end authentication form. It then
+  uses Json to intermediate between other parts of the application for
+  things like user authentication and session management.
   
 */src/
 -TYPE: Directory
@@ -135,19 +126,7 @@ in the browser. Part of the React framework.
          -DESCRIPTION: Renders the element tree in the browser 
          window from the React code in App.js.
          
-*README.md
--TYPE: Readme file
--DESCRIPTION: Contains useful methods that can be run in its working
-directory from the terminal.
-
-*yarn.lock
--TYPE: React Application
--DESCRIPTION: This forms the shell for the base react app. 
--WARNINGS: DO NOT MESS WITH THIS! CRITICAL TO FRAMEWORK
-
-*package.json, package-lock.json
--TYPE: Json files
--DESCRIPTION: More core React files
--WARNINGS: DO NOT MESS WITH! CRITICAL TO FRAMEWORK
+The rest of the files in the backend are files for the backend technologies
+and should NOT BE TAMPERED.
 _____________________________________________________________________________________
 
