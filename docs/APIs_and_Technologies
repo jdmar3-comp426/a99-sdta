@@ -15,7 +15,6 @@
 Documentation for our APIs can be found here:
 
 BACKEND RELATED
-
 *CryptoGeckoAPI
 -DESCRIPTION: Used to fetch information from cryptocurrency
 marketplaces to populate our dashboard with prices and
@@ -32,6 +31,17 @@ functionalities.
 -DESCRIPTION: Used for state management
 -URL: https://nodejs.org/api/
 
+*Express Node.Js Framework
+-DESCRIPTION: Used to set up a working server to test the application
+while developing locally pre-pub.
+-URL: https://expressjs.com/en/api.html
+
+
+
+
+
+
+FRONT END RELATED
 *React Top-Level API
 -DESCRIPTION: (From Reactjs.org) 
 React is the entry point to the React library. 
@@ -49,7 +59,4 @@ reference contains the function signatures and return types of the various
 interfaces in React Router.
 -URL: https://reactrouter.com/docs/en/v6/api
 
-*Express Node.Js Framework
--DESCRIPTION: Used to set up a working server to test the application
-while developing locally pre-pub.
--URL: https://expressjs.com/en/api.html
+
