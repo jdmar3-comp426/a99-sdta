@@ -1,0 +1,43 @@
+
+         _              _            _             _            _           _                   _            
+        /\ \           /\ \         /\ \     _    /\ \         /\ \        / /\                _\ \          
+       /  \ \         /  \ \       /  \ \   /\_\ /  \ \       /  \ \      / /  \              /\__ \         
+      / /\ \_\       / /\ \ \     / /\ \ \_/ / // /\ \ \     / /\ \ \    / / /\ \            / /_ \_\        
+     / / /\/_/      / / /\ \_\   / / /\ \___/ // / /\ \_\   / / /\ \_\  / / /\ \ \          / / /\/_/        
+    / / / ______   / /_/_ \/_/  / / /  \/____// /_/_ \/_/  / / /_/ / / / / /  \ \ \        / / /             
+   / / / /\_____\ / /____/\    / / /    / / // /____/\    / / /__\/ / / / /___/ /\ \      / / /              
+  / / /  \/____ // /\____\/   / / /    / / // /\____\/   / / /_____/ / / /_____/ /\ \    / / / ____          
+ / / /_____/ / // / /______  / / /    / / // / /______  / / /\ \ \  / /_________/\ \ \  / /_/_/ ___/\        
+/ / /______\/ // / /_______\/ / /    / / // / /_______\/ / /  \ \ \/ / /_       __\ \_\/_______/\__\/        
+\/___________/ \/__________/\/_/     \/_/ \/__________/\/_/    \_\/\_\___\     /____/_/\_______\/            
+         _      _          _       _            _     _          _        _          _           _           
+        /\ \   /\ \    _ / /\     /\ \         /\ \  /\ \    _ / /\      /\ \       /\ \        / /\      _  
+       /  \ \  \ \ \  /_/ / /    /  \ \       /  \ \ \ \ \  /_/ / /      \ \ \     /  \ \      / / /    / /\ 
+      / /\ \ \  \ \ \ \___\/    / /\ \ \     / /\ \ \ \ \ \ \___\/       /\ \_\   / /\ \ \    / / /    / / / 
+     / / /\ \ \ / / /  \ \ \   / / /\ \_\   / / /\ \_\/ / /  \ \ \      / /\/_/  / / /\ \_\  / / /_   / / /  
+    / / /  \ \_\\ \ \   \_\ \ / /_/_ \/_/  / / /_/ / /\ \ \   \_\ \    / / /    / /_/_ \/_/ / /_//_/\/ / /   
+   / / /   / / / \ \ \  / / // /____/\    / / /__\/ /  \ \ \  / / /   / / /    / /____/\   / _______/\/ /    
+  / / /   / / /   \ \ \/ / // /\____\/   / / /_____/    \ \ \/ / /   / / /    / /\____\/  / /  \____\  /     
+ / / /___/ / /     \ \ \/ // / /______  / / /\ \ \       \ \ \/ /___/ / /__  / / /______ /_/ /\ \ /\ \/      
+/ / /____\/ /       \ \  // / /_______\/ / /  \ \ \       \ \  //\__\/_/___\/ / /_______\\_\//_/ /_/ /       
+\/_________/         \_\/ \/__________/\/_/    \_\/        \_\/ \/_________/\/__________/    \_\/\_\/        
+                                                                                                             
+
+The front end is built on React, which is a javascript framework that uses the DOM to paint graphics
+on browser screens. Components in react work similarily to Widgets in Flutter: they live in a tree
+that is then processed by the browser into an element tree of simple HTML, CSS, and JavaScript.
+
+When a user signs in, React works in conjuction with Node.Js and the React Router framework
+to provide interactive screens to the user. The user can sign up or log in, their credentials
+being checked against Mongoose (our database) and giving them access to the crypto prices 
+dashboard if the credentials are valid. 
+
+When logged into a session, a user can see a cryptocurrency dashboard that shows them the
+logos and prices of cryptocurrencies per unit at the time of login. This is achieved through
+CryptoGecko API, which is an API to what seems to be a content delivery system of crypto
+market information. 
+
+Through Mongoose, Node.Js, React Router, and React, we're also able to offer users the ability 
+to change their login credentials by filling out and submitting either field of a two-field form.
+Users may also view their activity history, achieved through the same combination of technology.
+
