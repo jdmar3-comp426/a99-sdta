@@ -45,13 +45,23 @@ const LoginForm = ({user, setUser, setNotif}) => {
     }
 
     return (
+
         <div>
-            Login To Existing User
-            <form onSubmit={handleLogin}>
-                Username: <input value={username} onChange={(e)=>setUsername(e.target.value)} />
-                Password: <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
-                <button type="submit">Login</button>
+            <h3 class="title is-3">Login To Existing User</h3>
+            <div class="container is-max-desktop">
+                <form onSubmit={handleLogin}>
+                Username: <input class="input is-rounded" placeholder="Username" typevalue={username} onChange={(e)=>setUsername(e.target.value)} />
+                Password: <input class="input is-rounded" placeholder="Password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
+                <div class="block">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered is-2">
+                        <button class="button is-black is-outlined is-rounded" type="submit">Login</button>
+                    </div>
+                </div>
+                </div>
             </form>
+            </div>
+
         </div>
     )
 }

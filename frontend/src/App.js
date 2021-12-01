@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <h1 className="title">CryptoCurrency Dashboard</h1>
+          <h1 class="block title is-1">Cryptocurrency Dashboard</h1>
         <Notification message={notif} />
         <Header user={user} />
         <Routes>
@@ -36,7 +36,12 @@ const App = () => {
         </Routes>
         <LogoutButton user={user} setUser={setUser} setNotif={setNotif} />
         {user &&
-          <Link to='/userinfo' className="box">My User Info</Link>
+        <div class="columns is-centered">
+        <div class="column has-text-centered is-4">
+        <Link to='/userinfo' class="button is-black is-outlined is-rounded">My User Info</Link>
+
+        </div>
+    </div>
         }
       </Router>
     </div>

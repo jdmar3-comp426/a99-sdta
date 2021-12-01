@@ -23,13 +23,27 @@ const Dashboard = ({user}) => {
 
     return (
         <div>
-            <div className="box">Search Coin by Name: <input value={search} onChange={(e)=>setSearch(e.target.value)} /></div>
-            {searchedCoins.map(coin => 
-                <div key={coin.id} className="box">
+            <div class="container">
+            <h4 class="title is-4">Search Coin by Name:</h4>
+
+
+            <input class="input" value={search} onChange={(e)=>setSearch(e.target.value)} />
+
+            </div>
+            <div class="block">
+            </div>
+
+            {searchedCoins.map(coin =>
+                <div key={coin.id} className="container">
                     <img src={coin.image} alt="crypto" />
-                    <h1 className="title">{coin.name}</h1>
-                    <p>Symbol: {coin.symbol}</p>
-                    <p>Current Price: ${coin.current_price}</p>
+                    <div class="block">
+                    </div>
+                    <h1 className="title is-spaced">{coin.name}</h1>
+                    <h4 class="title is-4 is-spaced">Symbol: {coin.symbol}</h4>
+                    <h4 class="title is-4 is-spaced">Current Price: ${coin.current_price}</h4>
+                    <div class="block">
+                    </div>
+
                 </div>
                 )}
         </div>
