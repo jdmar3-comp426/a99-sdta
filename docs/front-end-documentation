@@ -21,6 +21,12 @@ ________________________________________________________________________________
                                                  
 This documentation includes relevant maintenance information about the graphical user 
 interface, authentication, assets, and other user-facing details of our application.
+The application uses React as the front end framework and React Router for authentication
+layer login and registering. We use the Bulma CSS framework
+
+The application consists of a simple sign-in page that authenticates a user. Once
+signed into a session, the user can view a dashboard of the top 30 cryptocurrencies,
+listing their logos and prices, aligned vertically.
 
 _____________________________________________________________________________________
      _ _                             
@@ -29,7 +35,6 @@ ________________________________________________________________________________
  \__,_|_\__,_\__, |_| \__,_|_|_|_/__/
              |___/                   
   
- 
  /*
   xxxxxxxxx                            xxxxxxxxx
  xx       x                           xx       x
@@ -56,8 +61,9 @@ ________________________________________________________________________________
 Below is a brief summary of what each file in frontend does:
 
 */public/ 
-TYPE: Directory
-DESCRIPTION: contains html, css, assets, .json manifest, and robots.txt
+-TYPE: Directory
+-DESCRIPTION: React files directory
+-CONTENTS: ontains html, css, assets, .json manifest, and robots.txt.
 
   *custom_style.css
   -TYPE: Cascading Style Sheet
@@ -68,8 +74,64 @@ DESCRIPTION: contains html, css, assets, .json manifest, and robots.txt
   
   *index.html
   -TYPE: Hypertext Markup Language
-  -DESCRIPTION: 
+  -DESCRIPTION: This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+      
+  *manifest.json
+  -TYPE: JSON
+  -DESCRIPTION: provides metadata used when web app is installed on a
+      user's mobile device or desktop. See:
+      https://developers.google.com/web/fundamentals/web-app-manifest/
+   
+  *robots.txt
+  -TYPE: Text
+  -DESCRIPTION: Purported to prevent robots from scraping our site.
+  Togglable instructions for scrapers, doesn't provide protection
+  against scraping (only indicates developer's preference to 
+  other developers)
   
-*
-*
+  *favicons.ico, .png files
+  -TYPE: Pictures
+  -DESCRIPTION: React logos
+  
+*/src/
+-TYPE: Directory
+-CONTENTS: Javascript files dictating layout of the element tree
+in the browser. Part of the React framework.
+         
+         *App.js
+         -TYPE: Javascript Document Object Model layout file
+         Written in "JSX," react's unusual syntax that combines
+         HTML, CSS, and JS syntax. 
+         -DESCRIPTION: Lays out the Document Object Model "tree"
+         used by the React front-end framework to draw graphics
+         on the screen, comprising the bulk of our graphics user 
+         interface. Contains authentication code for user
+         registration/sign in and session management.
+         Contains a Router "tag" that manages the 
+         updating of the dashboard graphic.
+         
+         *index.js
+         -TYPE: Javascript, React
+         -DESCRIPTION: Renders the element tree in the browser 
+         window from the React code in App.js.
+         
+*README.md
+-TYPE: Readme file
+-DESCRIPTION: Contains useful methods that can be run in its working
+directory from the terminal.
+
+*yarn.lock
+-TYPE: React Application
+-DESCRIPTION: This forms the shell for the base react app. 
+-WARNINGS: DO NOT MESS WITH THIS! CRITICAL TO FRAMEWORK
+
+*package.json, package-lock.json
+-TYPE: Json files
+-DESCRIPTION: More core React files
+-WARNINGS: DO NOT MESS WITH! CRITICAL TO FRAMEWORK
 _____________________________________________________________________________________
