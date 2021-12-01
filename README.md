@@ -1,15 +1,7 @@
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
-VIEW AS RAW FILE
 
 
-# CryptoCurrency Dashboard
+
+# [VIEW AS RAW FILE] CryptoCurrency Dashboard
 
 
           _____                    _____                _____                    _____                _____                   _______                 
