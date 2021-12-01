@@ -1,54 +1,209 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6414503&assignment_repo_type=AssignmentRepo)
-# a99 Finally
+# CryptoCurrency Dashboard
 
-COMP426 final project template repository. All your code and documentation goes here. Change this text to be a brief description of your final project. Put the name in the header above. You will change everything below to be the main technical documentation, as outlined below.
 
-## First steps
+          _____                    _____                _____                    _____                _____                   _______                 
+         /\    \                  /\    \              |\    \                  /\    \              /\    \                 /::\    \                
+        /::\    \                /::\    \             |:\____\                /::\    \            /::\    \               /::::\    \               
+       /::::\    \              /::::\    \            |::|   |               /::::\    \           \:::\    \             /::::::\    \              
+      /::::::\    \            /::::::\    \           |::|   |              /::::::\    \           \:::\    \           /::::::::\    \             
+     /:::/\:::\    \          /:::/\:::\    \          |::|   |             /:::/\:::\    \           \:::\    \         /:::/~~\:::\    \            
+    /:::/  \:::\    \        /:::/__\:::\    \         |::|   |            /:::/__\:::\    \           \:::\    \       /:::/    \:::\    \           
+   /:::/    \:::\    \      /::::\   \:::\    \        |::|   |           /::::\   \:::\    \          /::::\    \     /:::/    / \:::\    \          
+  /:::/    / \:::\    \    /::::::\   \:::\    \       |::|___|______    /::::::\   \:::\    \        /::::::\    \   /:::/____/   \:::\____\         
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\____\      /::::::::\    \  /:::/\:::\   \:::\____\      /:::/\:::\    \ |:::|    |     |:::|    |        
+/:::/____/     \:::\____\/:::/  \:::\   \:::|    |    /::::::::::\____\/:::/  \:::\   \:::|    |    /:::/  \:::\____\|:::|____|     |:::|    |        
+\:::\    \      \::/    /\::/   |::::\  /:::|____|   /:::/~~~~/~~      \::/    \:::\  /:::|____|   /:::/    \::/    / \:::\    \   /:::/    /         
+ \:::\    \      \/____/  \/____|:::::\/:::/    /   /:::/    /          \/_____/\:::\/:::/    /   /:::/    / \/____/   \:::\    \ /:::/    /          
+  \:::\    \                    |:::::::::/    /   /:::/    /                    \::::::/    /   /:::/    /             \:::\    /:::/    /           
+   \:::\    \                   |::|\::::/    /   /:::/    /                      \::::/    /   /:::/    /               \:::\__/:::/    /            
+    \:::\    \                  |::| \::/____/    \::/    /                        \::/____/    \::/    /                 \::::::::/    /             
+     \:::\    \                 |::|  ~|           \/____/                          ~~           \/____/                   \::::::/    /              
+      \:::\    \                |::|   |                                                                                    \::::/    /               
+       \:::\____\               \::|   |                                                                                     \::/____/                
+        \::/    /                \:|   |                                                                                      ~~                      
+         \/____/                  \|___|                                                                                                              
+                                                                                                                                                      
+          _____                    _____                    _____                    _____                                                            
+         /\    \                  /\    \                  /\    \                  /\    \                                                           
+        /::\    \                /::\    \                /::\    \                /::\____\                                                          
+       /::::\    \              /::::\    \              /::::\    \              /:::/    /                                                          
+      /::::::\    \            /::::::\    \            /::::::\    \            /:::/    /                                                           
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \          /:::/    /                                                            
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/__\:::\    \        /:::/____/                                                             
+   /:::/    \:::\    \      /::::\   \:::\    \       \:::\   \:::\    \      /::::\    \                                                             
+  /:::/    / \:::\    \    /::::::\   \:::\    \    ___\:::\   \:::\    \    /::::::\    \   _____                                                    
+ /:::/    /   \:::\ ___\  /:::/\:::\   \:::\    \  /\   \:::\   \:::\    \  /:::/\:::\    \ /\    \                                                   
+/:::/____/     \:::|    |/:::/  \:::\   \:::\____\/::\   \:::\   \:::\____\/:::/  \:::\    /::\____\                                                  
+\:::\    \     /:::|____|\::/    \:::\  /:::/    /\:::\   \:::\   \::/    /\::/    \:::\  /:::/    /                                                  
+ \:::\    \   /:::/    /  \/____/ \:::\/:::/    /  \:::\   \:::\   \/____/  \/____/ \:::\/:::/    /                                                   
+  \:::\    \ /:::/    /            \::::::/    /    \:::\   \:::\    \               \::::::/    /                                                    
+   \:::\    /:::/    /              \::::/    /      \:::\   \:::\____\               \::::/    /                                                     
+    \:::\  /:::/    /               /:::/    /        \:::\  /:::/    /               /:::/    /                                                      
+     \:::\/:::/    /               /:::/    /          \:::\/:::/    /               /:::/    /                                                       
+      \::::::/    /               /:::/    /            \::::::/    /               /:::/    /                                                        
+       \::::/    /               /:::/    /              \::::/    /               /:::/    /                                                         
+        \::/____/                \::/    /                \::/    /                \::/    /                                                          
+         ~~                       \/____/                  \/____/                  \/____/                                                           
+                                                                                                                                                      
 
-Other steps that you will need to take after you have cloned this repository:
 
-1. Choose and update the LICENSE file accordingly. 
-2. Edit this README.md file and use it as the main location of your technical documentation with links out to information contained under `/docs/`.
-3. Create a `/docs/` directory for more elaborate documentation of your API, planning notes, etc.
-4. Make sure that all of your team members have access to the repository as administrators.
-5. Create a project under the **Projects** tab. Use this to manage your planning. Create a To-do list, etc. Explore the tools available and user them to manage your project.
-7. Assign team roles and include a listing of those roles in this README.md file or in another file under `/docs/`.
-8. Then put your entire development workflow in this repository.
-9. Use **Pull requests** to propose changes and incorporate them into your code from various team members. 
-10. Use **Issues** to identify and track bugs and also to communicate about various aspects of the project.
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                        
+███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗
+╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝
+                                                                                        
 
-## Team mangement
 
-Plan to meet with your team ASAP.
-Talk through identifying roles within your team.
+$$\    $$\ $$\           $$\                     
+$$ |   $$ |\__|          \__|                    
+$$ |   $$ |$$\  $$$$$$$\ $$\  $$$$$$\  $$$$$$$\  
+\$$\  $$  |$$ |$$  _____|$$ |$$  __$$\ $$  __$$\ 
+ \$$\$$  / $$ |\$$$$$$\  $$ |$$ /  $$ |$$ |  $$ |
+  \$$$  /  $$ | \____$$\ $$ |$$ |  $$ |$$ |  $$ |
+   \$  /   $$ |$$$$$$$  |$$ |\$$$$$$  |$$ |  $$ |
+    \_/    \__|\_______/ \__| \______/ \__|  \__|
+                                                 
+                                                 
+                                               
 
-Try to figure out what each of you are good at/enjoy doing and try to work out roles that incorporate that.
 
-Some basic roles you will want to consider:
+Below is a brief description of our application, in words and UML. Our application allows for users to 
+check prices for the top 30 cryptocurrencies by market capitalization via a single dashboard.
+The dashboard gives users pictures of the cryptocurrency logo and the price for one unit
+of that cryptocurrency. Users can also view their activity logs by switching to an 
+alternate tab, and they can change their passwords and usernames as well! Users can
+sign up for an account (or even LOG IN if they're feeling scandalous), offering them a 
+cutting-edge click-and-fill experience bound to soften the hardest of hearts and harden
+the softest of handshakes. Everything you've never dreamed of can't be yours with just
+an A a day at CryptoDash (TM), your primary source for vertical lists of cryptocurency
+logos and prices (and you can view your activity history too!). So when you want to
+check your cryptocurrency prices in vertical format, choose...
 
-1. A review manager - someone to review pull requests and merge or reject them and manage the related discussions
-2. A plan manager - someone to keep an eye on the overall plan and keep the project tab/to-do list up to date
-3. A documentation manager - someone to keep the documentation in order and identify what is missing and needs to be documented
-4. Roles for team members to take charge or different parts of the project. Possible roles:
-    1. Front end lead
-    2. Back end lead
-    3. Databse lead
-    4. Design lead
-    5. Etc.
 
-You will notice that there are more roles than people in your group.
-That is because you will all be doing a hybrid job of managing a thing while working on other things.
 
-## Check in with instructional staff
 
-Once all the groups are together, we'll assign each group to an LA to check in with as you progress through the project.
 
-We will post that so that your team can schedule a time for an initial check-in with your assigned LA. It would be a good idea also to add your LA to your repository.
+ $$$$$$\                                 $$\               
+$$  __$$\                                $$ |              
+$$ /  \__| $$$$$$\  $$\   $$\  $$$$$$\ $$$$$$\    $$$$$$\  
+$$ |      $$  __$$\ $$ |  $$ |$$  __$$\\_$$  _|  $$  __$$\ 
+$$ |      $$ |  \__|$$ |  $$ |$$ /  $$ | $$ |    $$ /  $$ |
+$$ |  $$\ $$ |      $$ |  $$ |$$ |  $$ | $$ |$$\ $$ |  $$ |
+\$$$$$$  |$$ |      \$$$$$$$ |$$$$$$$  | \$$$$  |\$$$$$$  |
+ \______/ \__|       \____$$ |$$  ____/   \____/  \______/ 
+                    $$\   $$ |$$ |                         
+                    \$$$$$$  |$$ |                         
+                     \______/ \__|                         
+$$$$$$$\                      $$\                          
+$$  __$$\                     $$ |                         
+$$ |  $$ | $$$$$$\   $$$$$$$\ $$$$$$$\                     
+$$ |  $$ | \____$$\ $$  _____|$$  __$$\                    
+$$ |  $$ | $$$$$$$ |\$$$$$$\  $$ |  $$ |                   
+$$ |  $$ |$$  __$$ | \____$$\ $$ |  $$ |                   
+$$$$$$$  |\$$$$$$$ |$$$$$$$  |$$ |  $$ |                   
+\_______/  \_______|\_______/ \__|  \__|                  *
 
-## Assignment instructions
+*Ice Cream Cones Sold Seperately
 
-And that is about all you need to get started.
+███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗███████╗
+╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝╚══════╝
 
-All the rest of the assignment instructions are available at: https://comp426.johndmart.in/assignments/99
 
-Good skill, and have fun with this!
+$$\   $$\ $$\      $$\ $$\       
+$$ |  $$ |$$$\    $$$ |$$ |      
+$$ |  $$ |$$$$\  $$$$ |$$ |      
+$$ |  $$ |$$\$$\$$ $$ |$$ |      
+$$ |  $$ |$$ \$$$  $$ |$$ |      
+$$ |  $$ |$$ |\$  /$$ |$$ |      
+\$$$$$$  |$$ | \_/ $$ |$$$$$$$$\ 
+ \______/ \__|     \__|\________|
+                                 
+                                 
+                                 
+BACK END (see /docs/ folder for more details)
+/*
+            +------------------------------------------------------------------------------+
+            |                                                                              |
+            |                                                                              |
+            |               ____                            __                             |
+            |              /\  _`\                         /\ \__                          |
+            |              \ \ \L\ \     __     __      ___\ \ ,_\                         |
+            |               \ \ ,  /   /'__`\ /'__`\   /'___\ \ \/                         |
+            |                \ \ \\ \ /\  __//\ \L\.\_/\ \__/\ \ \_                        |
+            |                 \ \_\ \_\ \____\ \__/.\_\ \____\\ \__\                       |
+            |                  \/_/\/ /\/____/\/__/\/_/\/____/ \/__/                       |
+            |                                                                              |
+            |                                                                              |
+            +---------+------------------------------+-----------------------------+-------+
+                      |                              |                             |
+                      |   <<data>>                   |    <<data>>                 |   <<data>>
+                      |                              |                             |
+                      |                              |                             |
+                    \ 0 /                          \ 0 /                         \ 0 /
++-----------------+  \ /                            \ /                           \ /
+| BACK-END        |   |                              |                             |
+|                 |   |                              |                             |
+|      COMPONENT  |   |                              |                             |
++-----------------+-+-+-+--------------------------+-+-+--------------------------++-+------+
+|                   | | |                          | | |                          || |      |
+|                   | | |                          | | |                          || |      |
+|                   +-+-+                          +-+-+                          ++-+      |
+|                     |                              |                             |        |
+|        +---------+  |             +---------+      |        +---------+          |        |
+|        +---------+--+----------+  +---------+------+------+ +---------+----------+--+     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |  Node.Js Library      |  |   Mongoos Library     | |   CryptoGecko API     |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        +-----------------------+  +-----------------------+ +-----------------------+     |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
++-------------------------------------------------------------------------------------------+
+ */
+ 
+ 
+ FRONT END: see /docs/ folder for more details
+ 
+ /*
++-----------------------+
+|    public             |                                                         +-----------------------+
++-----------------------+---------------------------------------+                 |     src               |
+|                                                               |                 +-----------------------+---------------------------------------+
+|                                                               |                 |                                                               |
+|                                                               |                 |                                                               |
+|       --------|                            --------|          |                 |                                                               |
+|      /|-------|                           /|       |          |                 |       --------|                            --------|          |
+|     |_|       |                          |_|       |          |                 |      /|       |                           /|       |          |
+|     | |       |                          |         |          |                 |     |_|       |                          |_|       |          |
+|     | |       |                       1  |         |          |  <<React DOM>> 1|     |         |                          |         |          |
+|     | index.  |------------------------->| styles. |          +-----------------+     |         |                       1  |         |          |
+|     | html    | 1       <<links>>        | css     |          |1                |     | App.js  |------------------------->| index.js|          |
+|     | |       |                          |         |          |                 |     |         | 1       <<DOM  >>        |         |          |
+|     | |       |                          |         |          |                 |     |         |                          |         |          |
+|     | |       |                          |         |          |                 |     |         |                          |         |          |
+|     |---------|                          |---------|          |                 |     |         |                          |         |          |
+|         1 |                                                   |                 |     |---------|                          |---------|          |
+|           |<<links>>                                          |                 |                                                               |
+|           |                                                   |                 +---------------------------------------------------------------+
+|           +------>+---------------+                           |
+|                   |               |                           |
+|              1...*|               |                           |
+|                   |   Image       |                           |
+|                   |               |                           |
+|                   |               |                           |
+|                   +---------------+                           |
+|                                                               |
++---------------------------------------------------------------+
+ */
+
+
