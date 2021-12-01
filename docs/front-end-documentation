@@ -1,0 +1,9 @@
+This documentation includes relevant maintenance information about the graphical user 
+interface, authentication, assets, and other user-facing details of our application.
+Below is a brief summary of what each file in frontend does:
+
+*/public/ folder: contains html, css, assets, .json manifest, and robots.txt
+  *
+  *
+*
+*
