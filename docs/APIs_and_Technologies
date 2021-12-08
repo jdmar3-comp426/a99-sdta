@@ -1,0 +1,62 @@
+
+         _                   _        _         _        
+        / /\                /\ \     /\ \      / /\      
+       / /  \              /  \ \    \ \ \    / /  \     
+      / / /\ \            / /\ \ \   /\ \_\  / / /\ \__  
+     / / /\ \ \          / / /\ \_\ / /\/_/ / / /\ \___\ 
+    / / /  \ \ \        / / /_/ / // / /    \ \ \ \/___/ 
+   / / /___/ /\ \      / / /__\/ // / /      \ \ \       
+  / / /_____/ /\ \    / / /_____// / /   _    \ \ \      
+ / /_________/\ \ \  / / /   ___/ / /__ /_/\__/ / /      
+/ / /_       __\ \_\/ / /   /\__\/_/___\\ \/___/ /       
+\_\___\     /____/_/\/_/    \/_________/ \_____\/        
+                                                         
+
+Documentation for our APIs can be found here:
+
+BACKEND RELATED
+*CryptoGeckoAPI
+-DESCRIPTION: Used to fetch information from cryptocurrency
+marketplaces to populate our dashboard with prices and
+cryptocurrency logos.
+-URL: https://www.coingecko.com/en/api/documentation
+
+*Mongoose API
+-DESCRIPTION: Used to manage a database of our authenticated
+users for registering, log-in and other session management
+functionalities.
+-URL: https://mongoosejs.com/docs/api.html
+
+*Node.js API Reference Documentation
+-DESCRIPTION: Used for state management
+-URL: https://nodejs.org/api/
+
+*Express Node.Js Framework
+-DESCRIPTION: Used to set up a working server to test the application
+while developing locally pre-pub.
+-URL: https://expressjs.com/en/api.html
+
+
+
+
+
+
+FRONT END RELATED
+*React Top-Level API
+-DESCRIPTION: (From Reactjs.org) 
+React is the entry point to the React library. 
+If you load React from a <script> tag, these top-level APIs are 
+available on the React global. If you use ES6 with npm, you can write 
+import React from 'react'. If you use ES5 with npm, you can write var 
+React = require('react').
+-URL: https://reactjs.org/docs/react-api.html
+
+*React Router API Reference
+-DESCRIPTION: (From Reactrouter.com)
+React Router is a collection of React components, hooks and utilities 
+that make it easy to build multi-page applications with React. This 
+reference contains the function signatures and return types of the various 
+interfaces in React Router.
+-URL: https://reactrouter.com/docs/en/v6/api
+
+

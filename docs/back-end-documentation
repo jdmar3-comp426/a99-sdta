@@ -1,0 +1,132 @@
+
+           _               _                    _             _              _            _             _                _            _             _            _        
+          / /\            / /\                /\ \           /\_\           /\ \         /\ \     _    /\ \             /\ \         /\ \         /\ \          / /\      
+         / /  \          / /  \              /  \ \         / / /  _       /  \ \       /  \ \   /\_\ /  \ \____       /  \ \____   /  \ \       /  \ \        / /  \     
+        / / /\ \        / / /\ \            / /\ \ \       / / /  /\_\    / /\ \ \     / /\ \ \_/ / // /\ \_____\     / /\ \_____\ / /\ \ \     / /\ \ \      / / /\ \__  
+       / / /\ \ \      / / /\ \ \          / / /\ \ \     / / /__/ / /   / / /\ \_\   / / /\ \___/ // / /\/___  /    / / /\/___  // / /\ \ \   / / /\ \ \    / / /\ \___\ 
+      / / /\ \_\ \    / / /  \ \ \        / / /  \ \_\   / /\_____/ /   / /_/_ \/_/  / / /  \/____// / /   / / /    / / /   / / // / /  \ \_\ / / /  \ \_\   \ \ \ \/___/ 
+     / / /\ \ \___\  / / /___/ /\ \      / / /    \/_/  / /\_______/   / /____/\    / / /    / / // / /   / / /    / / /   / / // / /   / / // / /    \/_/    \ \ \       
+    / / /  \ \ \__/ / / /_____/ /\ \    / / /          / / /\ \ \     / /\____\/   / / /    / / // / /   / / /    / / /   / / // / /   / / // / /         _    \ \ \      
+   / / /____\_\ \  / /_________/\ \ \  / / /________  / / /  \ \ \   / / /______  / / /    / / / \ \ \__/ / /     \ \ \__/ / // / /___/ / // / /________ /_/\__/ / /      
+  / / /__________\/ / /_       __\ \_\/ / /_________\/ / /    \ \ \ / / /_______\/ / /    / / /   \ \___\/ /       \ \___\/ // / /____\/ // / /_________\\ \/___/ /       
+  \/_____________/\_\___\     /____/_/\/____________/\/_/      \_\_\\/__________/\/_/     \/_/     \/_____/         \/_____/ \/_________/ \/____________/ \_____\/        
+                                                                                                                                                                          
+______________________________________________________________________________________
+
+  _     _               _         _   _          
+ (_)_ _| |_ _ _ ___  __| |_  _ __| |_(_)___ _ _  
+ | | ' \  _| '_/ _ \/ _` | || / _|  _| / _ \ ' \ 
+ |_|_||_\__|_| \___/\__,_|\_,_\__|\__|_\___/_||_|
+                                                 
+This documentation includes relevant maintenance information about the backend
+of our application. The application uses a simple backend for the dashboard.
+The application uses Mongoose to store user authentication information and
+CryptonGecko API to fetch the cryptocurrency information that we show on the
+dashboard. We use Node.js and Express for the web servers.
+
+For more information on the CryptoGecko API, please see their documentation:
+https://www.coingecko.com/en/api/documentation
+
+P.S. BREAKING NEWS: fun fact!
+
+_____________________________________________________________________________________
+     _ _                             
+  __| (_)__ _ __ _ _ _ __ _ _ __  ___
+ / _` | / _` / _` | '_/ _` | '  \(_-<
+ \__,_|_\__,_\__, |_| \__,_|_|_|_/__/
+             |___/                   
+  /*
+            +------------------------------------------------------------------------------+
+            |                                                                              |
+            |                                                                              |
+            |               ____                            __                             |
+            |              /\  _`\                         /\ \__                          |
+            |              \ \ \L\ \     __     __      ___\ \ ,_\                         |
+            |               \ \ ,  /   /'__`\ /'__`\   /'___\ \ \/                         |
+            |                \ \ \\ \ /\  __//\ \L\.\_/\ \__/\ \ \_                        |
+            |                 \ \_\ \_\ \____\ \__/.\_\ \____\\ \__\                       |
+            |                  \/_/\/ /\/____/\/__/\/_/\/____/ \/__/                       |
+            |                                                                              |
+            |                                                                              |
+            +---------+------------------------------+-----------------------------+-------+
+                      |                              |                             |
+                      |   <<data>>                   |    <<data>>                 |   <<data>>
+                      |                              |                             |
+                      |                              |                             |
+                    \ 0 /                          \ 0 /                         \ 0 /
++-----------------+  \ /                            \ /                           \ /
+| BACK-END        |   |                              |                             |
+|                 |   |                              |                             |
+|      COMPONENT  |   |                              |                             |
++-----------------+-+-+-+--------------------------+-+-+--------------------------++-+------+
+|                   | | |                          | | |                          || |      |
+|                   | | |                          | | |                          || |      |
+|                   +-+-+                          +-+-+                          ++-+      |
+|                     |                              |                             |        |
+|        +---------+  |             +---------+      |        +---------+          |        |
+|        +---------+--+----------+  +---------+------+------+ +---------+----------+--+     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |  Node.Js Library      |  |   Mongoos Library     | |   CryptoGecko API     |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        |                       |  |                       | |                       |     |
+|        +-----------------------+  +-----------------------+ +-----------------------+     |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
+|                                                                                           |
++-------------------------------------------------------------------------------------------+
+ */
+ 
+_____________________________________________________________________________________
+
+  _         _ _     _          _                                     
+ | |__ _  _| | |___| |_ ___ __| |  ____  _ _ __  _ __  __ _ _ _ _  _ 
+ | '_ \ || | | / -_)  _/ -_) _` | (_-< || | '  \| '  \/ _` | '_| || |
+ |_.__/\_,_|_|_\___|\__\___\__,_| /__/\_,_|_|_|_|_|_|_\__,_|_|  \_, |
+                                                                |__/ 
+Below is a brief summary of what each file in frontend does:
+
+*/model/ 
+-TYPE: Directory
+-DESCRIPTION: Directory holding agent models
+-CONTENTS: contains Javascript files.
+
+  *user.js
+  -TYPE: JavaScript Model
+  -DESCRIPTION:This file represents the framework of a user. This file is linked
+  to Mongoose. It uses Mongoose to represent users via a Schema that is then
+  populated by user-inputted data in the front-end authentication form. It then
+  uses Json to intermediate between other parts of the application for
+  things like user authentication and session management.
+  
+*/src/
+-TYPE: Directory
+-CONTENTS: Javascript files dictating layout of the element tree
+in the browser. Part of the React framework.
+         
+         *App.js
+         -TYPE: Javascript Document Object Model layout file
+         Written in "JSX," react's unusual syntax that combines
+         HTML, CSS, and JS syntax. 
+         -DESCRIPTION: Lays out the Document Object Model "tree"
+         used by the React front-end framework to draw graphics
+         on the screen, comprising the bulk of our graphics user 
+         interface. Contains authentication code for user
+         registration/sign in and session management.
+         Contains a Router "tag" that manages the 
+         updating of the dashboard graphic.
+         
+         *index.js
+         -TYPE: Javascript, React
+         -DESCRIPTION: Renders the element tree in the browser 
+         window from the React code in App.js.
+         
+The rest of the files in the backend are files for the backend technologies
+and should NOT BE TAMPERED.
+_____________________________________________________________________________________
+
